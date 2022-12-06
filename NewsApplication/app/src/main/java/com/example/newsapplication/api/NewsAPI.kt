@@ -1,6 +1,6 @@
 package com.example.newsapplication.api
 
-import com.example.newsapplication.NewsResponse
+import com.example.newsapplication.models.NewsResponse
 import com.example.newsapplication.util.Constants.Companion.API_KEY
 import retrofit2.Response
 import retrofit2.http.GET
@@ -12,7 +12,7 @@ interface NewsAPI {
         @Query("country")
         countryCode: String = "us",
         @Query("page")
-        pageNumber: Int = 1,
+        pageNumber: Int = 1, 
         @Query("apiKey")
         apiKey: String = API_KEY
     ) : Response<NewsResponse>
