@@ -9,6 +9,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapplication.R
@@ -135,6 +136,16 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
             layoutManager = LinearLayoutManager(activity)
             addOnScrollListener(this@SearchNewsFragment.scrollListener)
         }
+//        rvSearchNews.addItemDecoration(
+//            DividerItemDecoration(
+//                context,
+//                DividerItemDecoration.VERTICAL
+//            ).setDrawable(resources.getDrawable(R.drawable.divider_drawable))
+//        )
+        val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
+        @Suppress("DEPRECATION")
+        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.divider_drawable))
+        rvSearchNews.addItemDecoration(dividerItemDecoration)
     }
 
 }

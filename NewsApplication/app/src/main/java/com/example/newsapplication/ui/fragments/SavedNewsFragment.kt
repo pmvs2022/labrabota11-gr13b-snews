@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,7 +15,9 @@ import com.example.newsapplication.adapters.NewsAdapter
 import com.example.newsapplication.ui.NewsActivity
 import com.example.newsapplication.ui.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_breaking_news.*
 import kotlinx.android.synthetic.main.fragment_saved_news.*
+import kotlinx.android.synthetic.main.fragment_search_news.*
 
 class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
 
@@ -77,5 +80,9 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
+        val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
+        @Suppress("DEPRECATION")
+        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.divider_drawable))
+        rvSavedNews.addItemDecoration(dividerItemDecoration)
     }
 }

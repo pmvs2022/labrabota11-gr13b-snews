@@ -18,6 +18,8 @@ import com.example.newsapplication.ui.NewsViewModel
 import com.example.newsapplication.util.Constants.Companion.QUERY_PAGE_SIZE
 import com.example.newsapplication.util.Resource
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
+import kotlinx.android.synthetic.main.fragment_breaking_news.paginationProgressBar
+import kotlinx.android.synthetic.main.fragment_search_news.*
 
 class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
@@ -116,11 +118,9 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             layoutManager = LinearLayoutManager(activity)
             addOnScrollListener(this@BreakingNewsFragment.scrollListener)
         }
-        rvBreakingNews.addItemDecoration(
-            DividerItemDecoration(
-                context,
-                DividerItemDecoration.HORIZONTAL
-            )
-        )
+        val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
+        @Suppress("DEPRECATION")
+        dividerItemDecoration.setDrawable(resources.getDrawable(R.drawable.divider_drawable))
+        rvBreakingNews.addItemDecoration(dividerItemDecoration)
     }
 }
