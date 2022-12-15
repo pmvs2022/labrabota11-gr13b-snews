@@ -1,5 +1,6 @@
 package com.example.newsapplication
 
+import com.example.newsapplication.ui.NewsActivity
 import org.junit.Test
 
 import org.junit.Assert.*
