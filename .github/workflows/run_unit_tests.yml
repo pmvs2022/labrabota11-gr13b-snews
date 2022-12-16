@@ -12,7 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with: {java-version: 1.8}
+      - uses: actions/setup-java@3
+        with: 
+          distribution: 'corretto'
+          java-version: '11.0.13'
+          cache: 'gradle'
       - name: Run unit tests
         run: cd ./NewsApplication; chmod +x gradlew; ./gradlew test
