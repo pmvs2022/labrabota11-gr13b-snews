@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - 'GithubActionsDemonstration'
+  push:
+    branches:
+      - 'Testing'
 
 jobs:
   Unit-test:
