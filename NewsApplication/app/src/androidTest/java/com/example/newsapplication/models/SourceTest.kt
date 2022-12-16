@@ -7,7 +7,7 @@ internal class SourceTest {
     val src = Source("id", "name")
     @Test
     fun checkSource(){
-        assertEquals("id", src.id)
+        assertEquals("idas", src.id)
         assertEquals("name", src.name)
     }
 }
