@@ -3,12 +3,12 @@ name: PR_unit_tests
 on:
   pull_request:
     branches:
-      - 'GithubActionsDemonstration'
+      - GithubActionsDemonstration
 
 jobs:
   Unit-test:
-    name: Run unit tests on PR in main
-    runs-on: ubuntu-latest
+    name: Run unit tests on PR in GithubActionsDemonstration
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2
