@@ -1,6 +1,8 @@
 package com.example.newsapplication
 
+import com.example.newsapplication.db.Converters
 import com.example.newsapplication.ui.NewsActivity
+import com.example.newsapplication.ui.fragments.BreakingNewsFragment
 import org.junit.Test
 
 import org.junit.Assert.*
