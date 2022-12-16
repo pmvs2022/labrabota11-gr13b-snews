@@ -19,7 +19,7 @@ internal class ConvertersTest {
     fun toSource() {
         val srcName = Source("id", "name")
         val srcId = Source("id", "name")
-        assertEquals("name", converter.fromSource(srcName))
+        assertEquals("nameasd", converter.fromSource(srcName))
         assertNotEquals("id", converter.fromSource(srcId))
     }
 }
