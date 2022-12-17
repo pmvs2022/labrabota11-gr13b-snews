@@ -22,8 +22,9 @@ jobs:
           cache: 'gradle'
       - name: Run unit tests
         run: cd ./NewsApplication; chmod +x gradlew; ./gradlew test
+        
       - name: Instrumentation Tests
-      - uses: reactivecircus/android-emulator-runner@v2
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 33
           target: default
