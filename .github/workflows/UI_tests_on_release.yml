@@ -51,8 +51,9 @@ jobs:
           name: Snews.apk
 
       - name: Firebase auth with gcloud
-        uses: google-github-actions/setup-gcloud@v1
+        uses: google-github-actions/setup-gcloud@master
         with:
+          version: '290.0.1'
           service_account_key: ${{ secrets.FIREBASE_KEY }}
           project_id: ${{ secrets.FIREBASE_PROJECT_ID }}
 
