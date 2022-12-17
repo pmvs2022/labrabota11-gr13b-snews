@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
           cache: 'gradle'
       - name: Build release APK and AAB after test
-        run: cd ./NewsApplication; chmod +x gradlew; ./gradlew test; ./gradlew assembleRelease; ./gradlew bundleRelease
+        run: ./gradlew assembleRelease; ./gradlew bundleRelease
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
