@@ -20,14 +20,19 @@ jobs:
           java-version: '11'
           cache: 'gradle'
       - name: Build release APK and AAB after test
-        run: cd ./NewsApplication; chmod +x gradlew; ./gradlew assembleRelease; ./gradlew bundleRelease
+        run: |
+          cd ./NewsApplication
+          chmod +x gradlew
+          ./gradlew test
+          ./gradlew assembleRelease
+          ./gradlew bundleRelease
       - name: Upload APK
         uses: actions/upload-artifact@v3
         with:
-          name: app-release.apk
+          name: Snews.apk
           path: NewsApplication/app/build/outputs/apk/release/app-release-unsigned.apk
       - name: Upload AAB Bundle
         uses: actions/upload-artifact@v3
         with:
-          name: app-release.aab
+          name: Snews.aab
           path: NewsApplication/app/build/outputs/bundle/release/app-release.aab
