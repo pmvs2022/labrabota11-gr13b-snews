@@ -21,15 +21,5 @@ jobs:
           java-version: '11'
           cache: 'gradle'
       - name: Run unit tests
-        run: cd ./NewsApplication; chmod +x gradlew; ./gradlew test
+        run: cd ./NewsApplication; chmod +x gradlew; ./gradlew test 
         
-      - name: Instrumentation Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          target: default
-          arch: x86
-          profile: Nexus 6
-          script: cd ./NewsApplication; chmod +x gradlew; ./gradlew connectedCheck --stacktrace
-        
-    
