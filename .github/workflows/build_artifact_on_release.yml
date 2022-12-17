@@ -3,7 +3,10 @@ name: Test_and_build_artifacts_on_release
 on:
   pull_request:
     branches:
-      - 'main'
+      - 'GithubActionsDemonstration'
+  push:
+    branches:
+      - 'Testing'
 
 jobs:
   build_apk_aab:
