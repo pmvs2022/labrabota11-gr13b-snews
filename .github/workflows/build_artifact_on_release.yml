@@ -8,6 +8,11 @@ on:
     branches:
       - 'Testing'
 
+env:
+  KEYSTORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+  RELEASE_SIGN_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+  RELEASE_SIGN_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORDD }}
+
 jobs:
   build_apk_aab:
     name: Build release artifacts
@@ -30,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Snews.apk
-          path: NewsApplication/app/build/outputs/apk/release/app-release-unsigned.apk
+          path: NewsApplication/app/build/outputs/apk/release/app-release.apk
       - name: Upload AAB Bundle
         uses: actions/upload-artifact@v3
         with:
