@@ -51,11 +51,13 @@ jobs:
           name: Snews.apk
 
       - name: Firebase auth with gcloud
-        uses: google-github-actions/setup-gcloud@master
+      - id: 'auth'
+        uses: 'google-github-actions/auth@v1'
         with:
-          version: '290.0.1'
-          service_account_key: ${{ secrets.FIREBASE_KEY }}
+          credentials_json: '${{ secrets.FIREBASE_KEY }}'
           project_id: ${{ secrets.FIREBASE_PROJECT_ID }}
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v1'
 
       - name: Run UI Tests in Firebase Test Lab
         run: |
