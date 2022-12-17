@@ -23,7 +23,7 @@ internal class ArticleTest {
         assertEquals("content", article.content)
         assertEquals("description", article.description)
         assertEquals("published", article.publishedAt)
-        assertEquals("name", article.source.name)
+        assertEquals("name", article.source?.name)
         assertEquals("title", article.title)
         assertEquals("url", article.url)
         assertEquals("urlToImage", article.urlToImage)
