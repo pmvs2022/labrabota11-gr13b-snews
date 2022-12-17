@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051049683845",
+    "project_id": "snews-lab",
+    "storage_bucket": "snews-lab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051049683845:android:c6e88216ea2bafca8972ec",
+        "android_client_info": {
+          "package_name": "com.example.newsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051049683845-hddqj11jkuht05mni5lnvmr5pug65tio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbQTk1oWp2JI6aE6rFNognxYZZiw40bpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051049683845-hddqj11jkuht05mni5lnvmr5pug65tio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

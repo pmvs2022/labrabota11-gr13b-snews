@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.google.gms.google-services'
 
 //plugins {
 //    id 'com.android.application'
@@ -82,7 +83,11 @@ dependencies {
     androidTestImplementation "androidx.fragment:fragment-testing:1.4.1"
     androidTestImplementation "androidx.test:core:1.4.0"
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:31.1.1')
 
+    // When using the BoM, don't specify versions in Firebase dependencies
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     // Architectural Components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
