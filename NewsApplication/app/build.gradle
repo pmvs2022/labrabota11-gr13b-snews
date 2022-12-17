@@ -28,8 +28,29 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        releaseSigningConfig {
+            def keystoreProperties = new Properties()
+            def keystorePropsFile = file("keystore/keystore_config")
+            if (keystorePropsFile.exists()) {
+                file("keystore/keystore_config").withInputStream { keystoreProperties.load(it) }
+                storeFile file("$keystoreProperties.storeFile")
+                storePassword "$keystoreProperties.storePassword"
+                keyAlias "$keystoreProperties.keyAlias"
+                keyPassword "$keystoreProperties.keyPassword"
+
+            } else {
+                storeFile file("keystore/snews_keystore.jks")
+                storePassword System.getenv('KEYSTORE_PASSWORD')
+                keyAlias System.getenv('RELEASE_SIGN_KEY_ALIAS')
+                keyPassword System.getenv('RELEASE_SIGN_KEY_PASSWORD')
+            }
+        }
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.releaseSigningConfig
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
