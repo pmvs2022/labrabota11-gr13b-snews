@@ -60,9 +60,6 @@ jobs:
 
       - name: Run UI Tests in Firebase Test Lab
         run: |
-          pwd
-          chmod +xwr NewsApplication
-          cd NewsApplication
           gcloud firebase test android models list
-          gcloud firebase test android run --app ./app/build/outputs/apk/release/app-release.apk --robo-script ./app/ui_test/NewsActivity_robo_script.json --device model=Pixel3,version=30,locale=en,orientation=portrait
+          gcloud firebase test android run --app "./app/build/outputs/apk/release/app-release.apk" --robo-script ./app/ui_test/NewsActivity_robo_script.json --device model=Pixel3,version=30,locale=en,orientation=portrait
      
