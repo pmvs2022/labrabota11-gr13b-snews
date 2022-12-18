@@ -45,10 +45,10 @@ jobs:
     needs: assemble_ui_test_artifacts
     steps:
       - uses: actions/checkout@v3
-      - name: Download Snews.apk
+      - name: Download SnewsApk
         uses: actions/download-artifact@v3
         with:
-          name: Snews.apk
+          name: SnewsApk
 
       - name: Firebase auth with gcloud
         uses: google-github-actions/auth@v1
