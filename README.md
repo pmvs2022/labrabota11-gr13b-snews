@@ -25,6 +25,8 @@ You can application in two ways: using emulator or your own Android device.
 * Room
 * Coroutines
 * Glide
+* Github Actions
+* Firebase
 # Contributing
 * [Serhiyenka Ilya](https://github.com/P1l1gr1m): CTO, **Team-Lead**: developing & researching, architecture, debugging
 * [Polyvyany Gleb](https://github.com/GlobusOffZeWorld): CEO, DevOps: tests, CI/CD, architecture, design
