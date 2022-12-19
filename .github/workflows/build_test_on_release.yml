@@ -3,9 +3,7 @@ on:
   pull_request:
     branches:
       - 'main'
-  push:
-    branches:
-      - 'PreRelease'
+      
 env:
   SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
   SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
