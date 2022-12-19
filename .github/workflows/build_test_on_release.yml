@@ -1,4 +1,4 @@
-name: UI_tests_on_release
+name: Build and Test
 on:
   pull_request:
     branches:
