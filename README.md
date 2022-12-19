@@ -28,3 +28,7 @@ You can application in two ways: using emulator or your own Android device.
 * [Serhiyenka Ilya](https://github.com/P1l1gr1m): **team leader**, app development
 * [Polyvyany Gleb](https://github.com/GlobusOffZeWorld): app building and testing, app development
 * [Lazovskaya Tatsiana](https://github.com/tanyalzvsk): app design, documentation, app development
+
+
+*Copyright © 2022 Snews Inc. All rights reserved.*
+
