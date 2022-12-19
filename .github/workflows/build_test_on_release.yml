@@ -2,10 +2,10 @@ name: Build and Test
 on:
   pull_request:
     branches:
-      - 'GithubActionsDemonstration'
+      - 'main'
   push:
     branches:
-      - 'Testing'
+      - 'PreRelease'
 env:
   SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
   SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
