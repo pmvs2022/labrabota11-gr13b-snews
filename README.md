@@ -13,7 +13,7 @@ As soon as you've installed our application, you can run it clicking on its icon
 * To find something click on search tab.
 # Build
 Compiling and building is provided by working with Android Studio or using terminal (./gradlew assempleRelease for apk file bulding or ./gradlew bundleRelease for add file building).
-## Debug
+#### Debug
 You can application in two ways: using emulator or your own Android device. 
 * Emulator: open Device Manager preferences (Virtual), choose one of the existing emulators and run project then.
 * Android device: open Device Manager preferences (Physical), choose pairing with Wi-Fi or connecting with USB cable and click on app icon. Please, make sure that you have already set up your device for connection.
@@ -25,9 +25,9 @@ You can application in two ways: using emulator or your own Android device.
 * Coroutines
 * Glide
 # Contributing
-* [Serhiyenka Ilya](https://github.com/P1l1gr1m): **team leader**, app development
-* [Polyvyany Gleb](https://github.com/GlobusOffZeWorld): app building and testing, app development
-* [Lazovskaya Tatsiana](https://github.com/tanyalzvsk): app design, documentation, app development
+* [Serhiyenka Ilya](https://github.com/P1l1gr1m): CTO, **Team-Lead**: developing & researching, architecture, debugging
+* [Polyvyany Gleb](https://github.com/GlobusOffZeWorld): CEO, DevOps: tests, CI/CD, architecture, design
+* [Lazovskaya Tatsiana](https://github.com/tanyalzvsk): Developer, PR-Manager: documentation, github pages, design ideas, wiki, developing
 
 
 *Copyright © 2022 Snews Inc. All rights reserved.*
