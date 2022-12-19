@@ -1,1 +1,1 @@
-[![Build and Test artifacts](https://github.com/pmvs2022/labrabota11-gr13b-snews/actions/workflows/UI_tests_on_release.yml/badge.svg)](https://github.com/pmvs2022/labrabota11-gr13b-snews/actions/workflows/UI_tests_on_release.yml)
+[![Build and Test](https://github.com/pmvs2022/labrabota11-gr13b-snews/actions/workflows/build_test_on_release.yml/badge.svg)](https://github.com/pmvs2022/labrabota11-gr13b-snews/actions/workflows/build_test_on_release.yml)
