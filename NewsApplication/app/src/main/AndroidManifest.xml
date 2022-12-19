@@ -9,6 +9,8 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:roundIcon="@mipmap/ic_launcher_foreground"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.newsapplication.ui.NewsActivity"
             android:exported="true">
