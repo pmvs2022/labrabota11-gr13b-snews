@@ -1,0 +1,64 @@
+name: Build and Test
+on:
+  pull_request:
+    branches:
+      - 'main'
+      
+env:
+  SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+  SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+  SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+  
+jobs:
+  assemble_ui_test_artifacts:
+    name: Build artifacts
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with: 
+          distribution: 'corretto'
+          java-version: '11'
+          cache: 'gradle'
+      - name: Build release APK and AAB after test
+        run: |
+          cd ./NewsApplication
+          chmod +x gradlew
+          ./gradlew test
+          ./gradlew assembleRelease
+          ./gradlew bundleRelease
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: SnewsApk
+          path: NewsApplication/app/build/outputs/apk/release/app-release.apk
+      - name: Upload AAB Bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: SnewsAab
+          path: NewsApplication/app/build/outputs/bundle/release/app-release.aab
+
+  run_ui_tests_on_firebase:
+    runs-on: ubuntu-20.04
+    needs: assemble_ui_test_artifacts
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download SnewsApk
+        uses: actions/download-artifact@v3
+        with:
+          name: SnewsApk
+
+      - name: Firebase auth with gcloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.FIREBASE_KEY }}
+          project_id: ${{ secrets.FIREBASE_PROJECT_ID }}
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+
+      - name: Run UI Tests in Firebase Test Lab
+        run: |
+          chmod +wx NewsApplication
+          gcloud firebase test android models list
+          gcloud firebase test android run --app app-release.apk --robo-script NewsApplication/app/ui_test/NewsActivity_robo_script.json --device model=Pixel3,version=30,locale=en,orientation=portrait
+     
