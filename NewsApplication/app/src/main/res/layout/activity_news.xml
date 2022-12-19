@@ -18,7 +18,7 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="Breaking news"
+            app:title="@string/app_name"
             app:titleTextColor="@color/white"
             android:background="@color/wine">
         </androidx.appcompat.widget.Toolbar>
