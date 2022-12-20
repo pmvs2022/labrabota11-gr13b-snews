@@ -15,7 +15,7 @@ As soon as you've installed our application, you can run it clicking on its icon
 # Build
 Compiling and building is provided by working with Android Studio or using terminal (./gradlew assempleRelease for apk file bulding or ./gradlew bundleRelease for add file building).
 #### Debug
-You can application in two ways: using emulator or your own Android device. 
+You can debug application in two ways: using emulator or your own Android device. 
 * Emulator: open Device Manager preferences (Virtual), choose one of the existing emulators and run project then.
 * Android device: open Device Manager preferences (Physical), choose pairing with Wi-Fi or connecting with USB cable and click on app icon. Please, make sure that you have already set up your device for connection.
 # Technologies
